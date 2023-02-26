@@ -18,6 +18,7 @@
 		9EC341C029AA501C00663711 /* DriveEduApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E432D70299AB2DF003124E8 /* DriveEduApp.swift */; };
 		9EC341C329AA51F300663711 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9EC341C529AA51F300663711 /* Localizable.strings */; };
 		9EC341C829AB6A2200663711 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC341C729AB6A2200663711 /* HomeView.swift */; };
+		9EC341CA29AB6E1200663711 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9EC341C929AB6E1200663711 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		9EC341C429AA51F300663711 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9EC341C629AA51F400663711 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9EC341C729AB6A2200663711 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		9EC341C929AB6E1200663711 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				9EC341B529AA484600663711 /* Languages */,
 				9E432D70299AB2DF003124E8 /* DriveEduApp.swift */,
 				9E432D76299AB2E1003124E8 /* Preview Content */,
+				9EC341C929AB6E1200663711 /* .gitignore */,
 			);
 			path = DriveEdu;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EC341CA29AB6E1200663711 /* .gitignore in Resources */,
 				9E432D78299AB2E1003124E8 /* Preview Assets.xcassets in Resources */,
 				9EC341C329AA51F300663711 /* Localizable.strings in Resources */,
 				9E432D75299AB2E1003124E8 /* Assets.xcassets in Resources */,
