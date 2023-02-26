@@ -1,0 +1,441 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9E432D75299AB2E1003124E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E432D74299AB2E1003124E8 /* Assets.xcassets */; };
+		9E432D78299AB2E1003124E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E432D77299AB2E1003124E8 /* Preview Assets.xcassets */; };
+		9EC341AF29A8C45A00663711 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9EC341AE29A8C45A00663711 /* Alamofire */; };
+		9EC341BB29AA501C00663711 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC341AB29A79FFA00663711 /* ViewModel.swift */; };
+		9EC341BC29AA501C00663711 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC341A929A79FBB00663711 /* Users.swift */; };
+		9EC341BD29AA501C00663711 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E432D72299AB2DF003124E8 /* ContentView.swift */; };
+		9EC341BE29AA501C00663711 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC341B129A9188800663711 /* LoginView.swift */; };
+		9EC341BF29AA501C00663711 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC341B329AA451100663711 /* OnboardingView.swift */; };
+		9EC341C029AA501C00663711 /* DriveEduApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E432D70299AB2DF003124E8 /* DriveEduApp.swift */; };
+		9EC341C329AA51F300663711 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9EC341C529AA51F300663711 /* Localizable.strings */; };
+		9EC341C829AB6A2200663711 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC341C729AB6A2200663711 /* HomeView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9E432D6D299AB2DF003124E8 /* DriveEdu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveEdu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E432D70299AB2DF003124E8 /* DriveEduApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveEduApp.swift; sourceTree = "<group>"; };
+		9E432D72299AB2DF003124E8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9E432D74299AB2E1003124E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9E432D77299AB2E1003124E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9EC341A929A79FBB00663711 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		9EC341AB29A79FFA00663711 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		9EC341B129A9188800663711 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		9EC341B329AA451100663711 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		9EC341C429AA51F300663711 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9EC341C629AA51F400663711 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9EC341C729AB6A2200663711 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9E432D6A299AB2DF003124E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EC341AF29A8C45A00663711 /* Alamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9E432D64299AB2DF003124E8 = {
+			isa = PBXGroup;
+			children = (
+				9E432D6F299AB2DF003124E8 /* DriveEdu */,
+				9E432D6E299AB2DF003124E8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9E432D6E299AB2DF003124E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9E432D6D299AB2DF003124E8 /* DriveEdu.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9E432D6F299AB2DF003124E8 /* DriveEdu */ = {
+			isa = PBXGroup;
+			children = (
+				9EC341A829A79F9B00663711 /* ViewModel */,
+				9EC341A629A79F7A00663711 /* Models */,
+				9EC341B029A9183700663711 /* Views */,
+				9E432D74299AB2E1003124E8 /* Assets.xcassets */,
+				9EC341B529AA484600663711 /* Languages */,
+				9E432D70299AB2DF003124E8 /* DriveEduApp.swift */,
+				9E432D76299AB2E1003124E8 /* Preview Content */,
+			);
+			path = DriveEdu;
+			sourceTree = "<group>";
+		};
+		9E432D76299AB2E1003124E8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9E432D77299AB2E1003124E8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9EC341A629A79F7A00663711 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9EC341A929A79FBB00663711 /* Users.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9EC341A829A79F9B00663711 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9EC341AB29A79FFA00663711 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9EC341B029A9183700663711 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9E432D72299AB2DF003124E8 /* ContentView.swift */,
+				9EC341B129A9188800663711 /* LoginView.swift */,
+				9EC341B329AA451100663711 /* OnboardingView.swift */,
+				9EC341C729AB6A2200663711 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9EC341B529AA484600663711 /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				9EC341C529AA51F300663711 /* Localizable.strings */,
+			);
+			path = Languages;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9E432D6C299AB2DF003124E8 /* DriveEdu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E432D7B299AB2E1003124E8 /* Build configuration list for PBXNativeTarget "DriveEdu" */;
+			buildPhases = (
+				9E432D6A299AB2DF003124E8 /* Frameworks */,
+				9EC341BA29AA501000663711 /* Sources */,
+				9E432D6B299AB2DF003124E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DriveEdu;
+			packageProductDependencies = (
+				9EC341AE29A8C45A00663711 /* Alamofire */,
+			);
+			productName = DriveEdu;
+			productReference = 9E432D6D299AB2DF003124E8 /* DriveEdu.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9E432D65299AB2DF003124E8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					9E432D6C299AB2DF003124E8 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 9E432D68299AB2DF003124E8 /* Build configuration list for PBXProject "DriveEdu" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				sv,
+			);
+			mainGroup = 9E432D64299AB2DF003124E8;
+			packageReferences = (
+				9EC341AD29A8C45A00663711 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
+			productRefGroup = 9E432D6E299AB2DF003124E8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9E432D6C299AB2DF003124E8 /* DriveEdu */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9E432D6B299AB2DF003124E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E432D78299AB2E1003124E8 /* Preview Assets.xcassets in Resources */,
+				9EC341C329AA51F300663711 /* Localizable.strings in Resources */,
+				9E432D75299AB2E1003124E8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9EC341BA29AA501000663711 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EC341BB29AA501C00663711 /* ViewModel.swift in Sources */,
+				9EC341C829AB6A2200663711 /* HomeView.swift in Sources */,
+				9EC341BC29AA501C00663711 /* Users.swift in Sources */,
+				9EC341BD29AA501C00663711 /* ContentView.swift in Sources */,
+				9EC341BE29AA501C00663711 /* LoginView.swift in Sources */,
+				9EC341BF29AA501C00663711 /* OnboardingView.swift in Sources */,
+				9EC341C029AA501C00663711 /* DriveEduApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9EC341C529AA51F300663711 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9EC341C429AA51F300663711 /* en */,
+				9EC341C629AA51F400663711 /* sv */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9E432D79299AB2E1003124E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9E432D7A299AB2E1003124E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9E432D7C299AB2E1003124E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DriveEdu/Preview Content\"";
+				DEVELOPMENT_TEAM = NUU979W77L;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rolla.DriveEdu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9E432D7D299AB2E1003124E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DriveEdu/Preview Content\"";
+				DEVELOPMENT_TEAM = NUU979W77L;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rolla.DriveEdu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9E432D68299AB2DF003124E8 /* Build configuration list for PBXProject "DriveEdu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E432D79299AB2E1003124E8 /* Debug */,
+				9E432D7A299AB2E1003124E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E432D7B299AB2E1003124E8 /* Build configuration list for PBXNativeTarget "DriveEdu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E432D7C299AB2E1003124E8 /* Debug */,
+				9E432D7D299AB2E1003124E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9EC341AD29A8C45A00663711 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9EC341AE29A8C45A00663711 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9EC341AD29A8C45A00663711 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 9E432D65299AB2DF003124E8 /* Project object */;
+}

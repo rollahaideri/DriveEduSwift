@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  DriveEdu
+
+  Created by Rohullah Haideri on 2023-02-25.
+  
+*/
+/*
+  Localizable.strings
+  DriveEdu
+
+  Created by Rohullah Haideri on 2023-02-25.
+  
+*/
+// Localizable.strings (Swedish)
+
+"onBoardingTitle1" = "Gör dig redo på vägen";
+"onBoardingTitle2" = "Övningköra privat";
+"onBoardingTitle3" = "Budgetvänligt";
+
+"onBoardingDescription1" = "Hitta och öva körning privat och ha flexibilitet och frihet att förbättra dina körkunskaper på din egen tidplan.";
+"onBoardingDescription2" = "Perfekt för dem som vill förbättra sina färdigheter utan att spräcka plånboken. Vår app är den perfekta lösningen för privat och problemfri övningkörning";
+"onBoardingDescription3" = "Genom privat övning kan du hitta billigare alternativ för övning innan din uppkörning.";
+
+
+"loginBtn" = "Logga in";
+"exploreBtn" = "Utförska";
+
+
+
