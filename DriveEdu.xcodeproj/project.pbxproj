@@ -19,6 +19,7 @@
 		9EC341C329AA51F300663711 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9EC341C529AA51F300663711 /* Localizable.strings */; };
 		9EC341C829AB6A2200663711 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC341C729AB6A2200663711 /* HomeView.swift */; };
 		9EC341CA29AB6E1200663711 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9EC341C929AB6E1200663711 /* .gitignore */; };
+		9EC341CC29AE402D00663711 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC341CB29AE402D00663711 /* RegisterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		9EC341C629AA51F400663711 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9EC341C729AB6A2200663711 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9EC341C929AB6E1200663711 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		9EC341CB29AE402D00663711 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				9EC341B129A9188800663711 /* LoginView.swift */,
 				9EC341B329AA451100663711 /* OnboardingView.swift */,
 				9EC341C729AB6A2200663711 /* HomeView.swift */,
+				9EC341CB29AE402D00663711 /* RegisterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				9EC341BC29AA501C00663711 /* Users.swift in Sources */,
 				9EC341BD29AA501C00663711 /* ContentView.swift in Sources */,
 				9EC341BE29AA501C00663711 /* LoginView.swift in Sources */,
+				9EC341CC29AE402D00663711 /* RegisterView.swift in Sources */,
 				9EC341BF29AA501C00663711 /* OnboardingView.swift in Sources */,
 				9EC341C029AA501C00663711 /* DriveEduApp.swift in Sources */,
 			);

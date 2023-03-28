@@ -21,6 +21,15 @@
 "onBoardingDescription3" = "Through the private practice you can find more cheaper option for practicing before your prove";
 "loginBtn" = "Login";
 "exploreBtn" = "Explore";
+"noAccountMsg" = "Don't have an account?";
+"haveAccountMsg" = "Already have an account?";
+"registerTxt" = "Register";
+"welcomeMsg" = "Welcome to Drive Edu!";
+
+// Text field strings
+"usernameTxt" = "Username";
+"passwordTxt" = "Password";
+"confirmPasswordTxt" = "Confirm Password";
 
 
 

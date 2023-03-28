@@ -14,12 +14,15 @@ struct ContentView: View {
     
     
     var body: some View {
-        VStack {
-            LoginView(viewModel: viewModel)
-        } // End VStack
-        .padding()
+        NavigationView {
+            if viewModel.isLoggingIn {
+                HomeView()
+            } else {
+                LoginView(viewModel: viewModel)
+            }
+        }
+        
     }
-    
 }
         
     

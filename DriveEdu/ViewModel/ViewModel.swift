@@ -11,10 +11,15 @@ import Alamofire
 struct LoginResponse: Codable {
     let token: String
 }
+struct RegisterResponse: Codable {
+    let message: String
+}
+
 
 struct Constants {
-    static let baseUrl = "http://192.168.1.67:4000"
+    static let baseUrl = "http://192.168.1.136:4000"
     static let loginUrl = "\(baseUrl)/user/login"
+    static let registerUrl = "\(baseUrl)/user/signup"
     static let contentType = "application/json"
 }
 
@@ -34,7 +39,7 @@ class AuthViewModel: ObservableObject {
             errorMessage = "Please enter your username"
             return
         }
-        
+
         guard !user.password.isEmpty else {
             isShowingError = true
             errorMessage = "Please enter your password"
@@ -66,6 +71,46 @@ class AuthViewModel: ObservableObject {
             }
     }
  // login end
+    
+    func register() {
+        guard !user.username.isEmpty else {
+            isShowingError = true
+            errorMessage = "Please enter a username"
+            return
+        }
+        
+        guard !user.password.isEmpty else {
+            isShowingError = true
+            errorMessage = "Please enter a password"
+            return
+        }
+        
+        let parameters = [
+            "username": user.username,
+            "password": user.password
+        ]
+        
+        let headers: HTTPHeaders = [
+            "Content-Type": Constants.contentType
+        ]
+        
+        AF.request(Constants.registerUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+            .responseDecodable(of: RegisterResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    self.isLoggingIn = true
+                    self.isShowingError = false
+                    
+                    print(response.message)
+                    
+                case .failure(let error):
+                    self.isShowingError = true
+                    self.errorMessage = "Failed to register user: \(error.localizedDescription)"
+                    self.isLoggingIn = false
+                }
+            }
+    }
+
     
     
 }

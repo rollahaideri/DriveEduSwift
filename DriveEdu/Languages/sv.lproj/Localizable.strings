@@ -25,6 +25,17 @@
 
 "loginBtn" = "Logga in";
 "exploreBtn" = "Utförska";
+"noAccountMsg" = "Har inget konto?";
+"haveAccountMsg" = "Har redan ett konto?";
+"registerTxt" = "Skapa konto";
+"welcomeMsg" = "Välkommen till Drive Edu!";
+
+// Text field strings
+"usernameTxt" = "Användernamn";
+"passwordTxt" = "Lösenord";
+"confirmPasswordTxt" = "Bekräfta lösenord";
+
+
 
 
 
