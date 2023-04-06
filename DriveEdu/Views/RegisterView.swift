@@ -53,9 +53,14 @@ struct RegisterView: View {
             }
             
             if viewModel.isLoggingIn {
-                Text("You'r account created successfully")
-                
-                
+                NavigationLink(
+                    destination: HomeView(),
+                    isActive: $isActive,
+                    label: {
+                        EmptyView()
+                    }
+                )
+                .navigationBarHidden(true)
             }
             
             Button(action: {

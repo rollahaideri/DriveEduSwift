@@ -15,7 +15,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            if viewModel.isLoggingIn {
+            if viewModel.isAuthenticated() {
                 HomeView()
             } else {
                 LoginView(viewModel: viewModel)

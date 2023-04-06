@@ -8,9 +8,34 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .navigationBarBackButtonHidden(true)
+        
+        TabView {
+            Text("First View")
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("First")
+                }
+                .toolbarBackground(.visible, for: .tabBar)
+            
+            Text("Second View")
+                .tabItem {
+                    Image(systemName: "ellipsis.message.fill")
+                    Text("Messages")
+                }
+            
+            Text("Third View")
+                .tabItem {
+                    Image(systemName: "plus.app")
+                    Text("Third")
+                }
+            Text("Forth View")
+                .tabItem {
+                    Image(systemName: "gear.circle")
+                    Text("Settings")
+                }
+        }
     }
 }
 

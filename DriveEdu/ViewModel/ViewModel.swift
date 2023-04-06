@@ -32,6 +32,11 @@ class AuthViewModel: ObservableObject {
     var errorMessage = ""
     var isLoggingIn = false
     
+    init() {
+            // Check if the user has a valid token stored in UserDefaults
+        self.isAuthenticated()
+        }
+    
     func login() {
         
         guard !user.username.isEmpty else {
@@ -98,6 +103,7 @@ class AuthViewModel: ObservableObject {
             .responseDecodable(of: RegisterResponse.self) { response in
                 switch response.result {
                 case .success(let response):
+                    UserDefaults.standard.set(true, forKey: "isRegistered")
                     self.isLoggingIn = true
                     self.isShowingError = false
                     
@@ -111,6 +117,8 @@ class AuthViewModel: ObservableObject {
             }
     }
 
-    
+    func isAuthenticated() -> Bool {
+            return UserDefaults.standard.string(forKey: "token") != nil
+        }
     
 }
