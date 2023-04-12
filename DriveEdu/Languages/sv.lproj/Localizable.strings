@@ -35,6 +35,12 @@
 "passwordTxt" = "Lösenord";
 "confirmPasswordTxt" = "Bekräfta lösenord";
 
+// Card View Strings
+"licenseTxt" = "Körkort";
+"carTxt" = "Bil";
+"supervisorTxt" = "Handledare";
+"manuelTxt" = "Manuel";
+"automateTxt" = "Automatad";
 
 
 

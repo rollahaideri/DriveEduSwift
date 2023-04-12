@@ -31,5 +31,12 @@
 "passwordTxt" = "Password";
 "confirmPasswordTxt" = "Confirm Password";
 
+// Card View Strings
+"licenseTxt" = "Driving-license";
+"carTxt" = "Car";
+"supervisorTxt" = "Supervisor";
+"manuelTxt" = "Manuel";
+"automateTxt" = "Automated";
+
 
 
