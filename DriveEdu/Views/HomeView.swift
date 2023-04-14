@@ -8,33 +8,36 @@
 import SwiftUI
 
 struct HomeView: View {
-    
+    @State private var selection = 0
     var body: some View {
         
-        TabView {
-            Text("First View")
+        TabView(selection: $selection) {
+            FirstView(viewModel: AuthViewModel())
                 .tabItem {
-                    Image(systemName: "house")
-                    Text("First")
-                }
+                    selection == 0 ? Image("ic-house-window-fill").renderingMode(.template) : Image("ic-house-window")
+                        .renderingMode(.original)
+                    Text("Home")
+                }.tag(0)
+                
                 .toolbarBackground(.visible, for: .tabBar)
             
-            Text("Second View")
+            Text("Messages")
                 .tabItem {
-                    Image(systemName: "ellipsis.message.fill")
+                    selection == 1 ? Image("ic-message-fill").renderingMode(.template) :
+                    Image("ic-message").renderingMode(.original)
                     Text("Messages")
-                }
+                }.tag(1)
+                .toolbarBackground(.visible, for: .tabBar)
             
-            Text("Third View")
+            Text("Profile")
                 .tabItem {
-                    Image(systemName: "plus.app")
-                    Text("Third")
-                }
-            Text("Forth View")
-                .tabItem {
-                    Image(systemName: "gear.circle")
-                    Text("Settings")
-                }
+                    selection == 2 ? Image("ic-profile-fill").renderingMode(.template) :
+                    Image("ic-profile").renderingMode(.original)
+                    Text("Profile")
+                }.tag(2)
+                .toolbarBackground(.visible, for: .tabBar)
+            
+            
         }
     }
 }

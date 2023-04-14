@@ -38,5 +38,7 @@
 "manuelTxt" = "Manuel";
 "automateTxt" = "Automated";
 
+// Searchable String
+"searchTxt" = "Search";
 
 

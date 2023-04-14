@@ -20,22 +20,24 @@ struct Constants {
     static let baseUrl = "http://192.168.1.136:4000"
     static let loginUrl = "\(baseUrl)/user/login"
     static let registerUrl = "\(baseUrl)/user/signup"
+    static let profileUrl = "\(baseUrl)/profile"
     static let contentType = "application/json"
 }
 
 class AuthViewModel: ObservableObject {
     
     
-    
+    @Published var profiles : [Profile] = []
     @Published var user = User(username: "", password: "")
     @Published var isShowingError: Bool = false
     var errorMessage = ""
     var isLoggingIn = false
     
     init() {
-            // Check if the user has a valid token stored in UserDefaults
+        // Check if the user has a valid token stored in UserDefaults
         self.isAuthenticated()
-        }
+        self.fetchProfiles()
+    }
     
     func login() {
         
@@ -44,7 +46,7 @@ class AuthViewModel: ObservableObject {
             errorMessage = "Please enter your username"
             return
         }
-
+        
         guard !user.password.isEmpty else {
             isShowingError = true
             errorMessage = "Please enter your password"
@@ -75,7 +77,7 @@ class AuthViewModel: ObservableObject {
                 }
             }
     }
- // login end
+    // login end
     
     func register() {
         guard !user.username.isEmpty else {
@@ -116,9 +118,21 @@ class AuthViewModel: ObservableObject {
                 }
             }
     }
-
-    func isAuthenticated() -> Bool {
-            return UserDefaults.standard.string(forKey: "token") != nil
-        }
     
+    func isAuthenticated() -> Bool {
+        return UserDefaults.standard.string(forKey: "token") != nil
+    }
+    
+    func fetchProfiles () {
+        AF.request(Constants.profileUrl, method: .get)
+            .responseDecodable(of: [Profile].self) { response in
+                switch response.result {
+                case .success(let profiles):
+                    self.profiles = profiles
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        
+    }
 }
