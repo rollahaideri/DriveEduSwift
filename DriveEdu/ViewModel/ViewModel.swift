@@ -28,14 +28,16 @@ class AuthViewModel: ObservableObject {
     
     
     @Published var profiles : [Profile] = []
+    @Published var profile = Profile(username: "", firstName: "", lastName: "", city: "", drivingLicense: "", carModel: "")
     @Published var user = User(username: "", password: "")
     @Published var isShowingError: Bool = false
     var errorMessage = ""
     var isLoggingIn = false
+    @Published var selection: String?
     
     init() {
         // Check if the user has a valid token stored in UserDefaults
-        self.isAuthenticated()
+        
         self.fetchProfiles()
     }
     
@@ -69,6 +71,7 @@ class AuthViewModel: ObservableObject {
                     UserDefaults.standard.set(response.token, forKey: "token")
                     self.isLoggingIn = true
                     self.isShowingError = false
+                    print("loggedin successfully")
                     // TODO: Handle successful login
                 case .failure(let error):
                     self.isShowingError = true
@@ -123,16 +126,39 @@ class AuthViewModel: ObservableObject {
         return UserDefaults.standard.string(forKey: "token") != nil
     }
     
-    func fetchProfiles () {
+    func fetchProfiles() {
         AF.request(Constants.profileUrl, method: .get)
-            .responseDecodable(of: [Profile].self) { response in
+            .validate() // Validation to automatically check for HTTP errors
+            .responseDecodable(of: [Profile].self) { [weak self] response in // Capture list to avoid memory leaks
                 switch response.result {
                 case .success(let profiles):
-                    self.profiles = profiles
+                    self?.profiles = profiles
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    print("Failed to fetch profiles: \(error.localizedDescription)")
                 }
             }
+    }
+    
+    func completeProfile () {
+        let authToken = UserDefaults.standard.string(forKey: "token") ?? ""
+        let headers: HTTPHeaders = [
+            "Content-Type": Constants.contentType,
+            "Authorization":  "Bearer \(authToken)"
+        ]
         
+        AF.request(Constants.profileUrl,
+                   method: .post,
+                   parameters: profile, // Use the `profile` object directly as parameters
+                   encoder: JSONParameterEncoder.default, // `JSONParameterEncoder` to encode the `profile` object as JSON
+                   headers: headers)
+        .validate() // Validation to automatically check for HTTP errors
+        .responseDecodable(of: Profile.self) { [weak self] response in
+            switch response.result {
+            case .success(let profile):
+                self?.profile = profile
+            case .failure(let error):
+                print("Failed to register user: \(error.localizedDescription)")
+            }
+        }
     }
 }

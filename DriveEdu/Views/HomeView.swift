@@ -14,12 +14,13 @@ struct HomeView: View {
         TabView(selection: $selection) {
             FirstView(viewModel: AuthViewModel())
                 .tabItem {
-                    selection == 0 ? Image("ic-house-window-fill").renderingMode(.template) : Image("ic-house-window")
+                    selection == 0 ? Image("ic-house-window-fill").renderingMode(.template) :
+                    Image("ic-house-window")
                         .renderingMode(.original)
                     Text("Home")
                 }.tag(0)
                 
-                .toolbarBackground(.visible, for: .tabBar)
+//                .toolbarBackground(.visible, for: .tabBar)
             
             Text("Messages")
                 .tabItem {
@@ -27,15 +28,15 @@ struct HomeView: View {
                     Image("ic-message").renderingMode(.original)
                     Text("Messages")
                 }.tag(1)
-                .toolbarBackground(.visible, for: .tabBar)
+//                .toolbarBackground(.visible, for: .tabBar)
             
-            Text("Profile")
+            ProfileView()
                 .tabItem {
                     selection == 2 ? Image("ic-profile-fill").renderingMode(.template) :
                     Image("ic-profile").renderingMode(.original)
                     Text("Profile")
                 }.tag(2)
-                .toolbarBackground(.visible, for: .tabBar)
+//                .toolbarBackground(.visible, for: .tabBar)
             
             
         }

@@ -12,6 +12,7 @@ struct DriveEduApp: App {
     @AppStorage("isFirstLaunch") var isFirstLaunch: Bool = true
     var body: some Scene {
         WindowGroup {
+            NavigationView {
             if isFirstLaunch {
                 // Show the onboarding view for the first launch
                 OnboardingView()
@@ -23,7 +24,7 @@ struct DriveEduApp: App {
                 // Show the main content view after the first launch
                 ContentView()
             }
-        
+        }
         }
     }
 }

@@ -11,7 +11,7 @@ struct TestView: View {
     @State private var searchText = ""
 
     var body: some View {
-        NavigationView {
+//        NavigationView {
             List {
                 // Your list items
             }
@@ -31,7 +31,7 @@ struct TestView: View {
                     
             }
             .navigationTitle("My List")
-        }
+//        }
     
 }
 

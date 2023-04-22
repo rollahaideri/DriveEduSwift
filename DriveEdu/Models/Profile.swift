@@ -7,15 +7,13 @@
 
 import Foundation
 
-struct Profile: Codable {
+struct Profile: Decodable, Encodable {
     let username: String
-        let firstName: String
-        let lastName: String
-        let city: String
-        let drivingLicense: String
-        let carModel: String
-    
-    
+        var firstName: String
+        var lastName: String
+        var city: String
+        var drivingLicense: String
+        var carModel: String
 }
 
 

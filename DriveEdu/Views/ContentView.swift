@@ -10,19 +10,18 @@ import Alamofire
 
 struct ContentView: View {
     
-    @StateObject var viewModel = AuthViewModel()
-    
-    
-    var body: some View {
-        NavigationView {
-            if viewModel.isAuthenticated() {
-                HomeView()
-            } else {
-                LoginView(viewModel: viewModel)
-            }
-        }
-        
-    }
+    @ObservedObject var viewModel = AuthViewModel()
+       
+       
+       var body: some View {
+           
+               if viewModel.isLoggingIn {
+                   HomeView()
+               } else {
+                   LoginView(viewModel: viewModel)
+               }
+           
+       }
 }
         
     

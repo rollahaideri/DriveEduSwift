@@ -26,7 +26,7 @@ struct OnboardingView: View {
     
     var body: some View {
         
-        NavigationView{
+//        NavigationView{
             VStack {
                 Spacer()
                 TabView(selection: $currentStep) {
@@ -106,7 +106,7 @@ struct OnboardingView: View {
                 .padding(.top)
                 Spacer()
             }
-        }
+//        } // NavigationView
     }
 }
 

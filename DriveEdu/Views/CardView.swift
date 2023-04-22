@@ -11,8 +11,6 @@ import SwiftUI
 
 struct CardView: View {
     
-    
-    
     let firstName: String
     let lastName: String
     let city: String

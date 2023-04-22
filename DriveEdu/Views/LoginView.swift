@@ -66,7 +66,7 @@ struct LoginView: View {
                             .padding(.horizontal)
                     }
                 }
-                .disabled(viewModel.isLoggingIn)
+                
                 .padding(.top, 20)
                 
                 Spacer()
