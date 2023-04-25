@@ -35,11 +35,11 @@ class AuthViewModel: ObservableObject {
     var isLoggingIn = false
     @Published var selection: String?
     
-    init() {
-        // Check if the user has a valid token stored in UserDefaults
-        
-        self.fetchProfiles()
-    }
+//    init() {
+//        // Check if the user has a valid token stored in UserDefaults
+//        
+//        self.fetchProfiles()
+//    }
     
     func login() {
         

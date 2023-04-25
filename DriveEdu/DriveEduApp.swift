@@ -22,7 +22,7 @@ struct DriveEduApp: App {
                     }
             } else {
                 // Show the main content view after the first launch
-                ContentView()
+                ContentView(viewModel: AuthViewModel())
             }
         }
         }

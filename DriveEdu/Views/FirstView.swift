@@ -9,22 +9,26 @@ import SwiftUI
 
 
 struct FirstView: View {
-    @ObservedObject var viewModel: AuthViewModel
+    @StateObject var viewModel: AuthViewModel = AuthViewModel()
     @State private var searchText = ""
     var body: some View {
 //        NavigationView {
-                    List(viewModel.profiles.filter {
-                        searchText.isEmpty ? true : $0.firstName.localizedStandardContains(searchText) ||
-                            $0.lastName.localizedStandardContains(searchText) ||
-                            $0.city.localizedStandardContains(searchText) ||
-                            $0.carModel.localizedStandardContains(searchText)
-                    } .reversed(), id: \.username) { profile in
-                        CardView(firstName: profile.firstName, lastName: profile.lastName, city: profile.city, drivingLicense: profile.drivingLicense, carModel: profile.carModel)
-                    }
-//                    .scrollContentBackground(.hidden)
-                    .searchable(text: $searchText, prompt: LocalizedStringKey("searchTxt")) // add the searchable modifier
-                    .navigationTitle("Profiles") // add a navigation title
-                }
+        
+        VStack {
+            List(viewModel.profiles.filter {
+                            searchText.isEmpty ? true : $0.firstName.localizedStandardContains(searchText) ||
+                                $0.lastName.localizedStandardContains(searchText) ||
+                                $0.city.localizedStandardContains(searchText) ||
+                                $0.carModel.localizedStandardContains(searchText)
+                        }
+                            .reversed(), id: \.username) { profile in
+                            CardView(firstName: profile.firstName, lastName: profile.lastName, city: profile.city, drivingLicense: profile.drivingLicense, carModel: profile.carModel)
+                            }
+    //                    .scrollContentBackground(.hidden)
+                        .searchable(text: $searchText, prompt: LocalizedStringKey("searchTxt")) // add the searchable modifier
+                    .navigationTitle("Profiles")
+        } .onAppear{viewModel.fetchProfiles()}
+    }
 //            }
 }
 

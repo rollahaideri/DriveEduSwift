@@ -22,7 +22,8 @@ struct HomeView: View {
                 
 //                .toolbarBackground(.visible, for: .tabBar)
             
-            Text("Messages")
+            
+            ChatView()
                 .tabItem {
                     selection == 1 ? Image("ic-message-fill").renderingMode(.template) :
                     Image("ic-message").renderingMode(.original)
