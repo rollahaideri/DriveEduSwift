@@ -11,7 +11,7 @@ class ChatScreenModel: ObservableObject {
     private var webSocketTask: URLSessionWebSocketTask? // 1
     // MARK: - Connection
     func connect() { // 2
-        let url = URL(string: "ws://192.168.1.136:4000/chat")! // 3
+        let url = URL(string: "ws://192.168.1.136:4000")! // 3
         webSocketTask = URLSession.shared.webSocketTask(with: url) // 4
         webSocketTask?.receive(completionHandler: onReceive) // 5
         webSocketTask?.resume() // 6
