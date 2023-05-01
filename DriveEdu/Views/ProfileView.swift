@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @ObservedObject var viewModel: AuthViewModel
+    
     var body: some View {
         
-        
-//        NavigationView {
             List{
                 Section {
                     NavigationLink(destination: CompleteProfileView(viewModel: AuthViewModel()), label: {
                         HStack (spacing: 13){
                             Image("ic-profile-edit")
-                            Text("Complete your profile")
+                            
+                            Text(viewModel.profileExist ? "Complete your profile" : "Update your profile")
                                 .font(.system(size: 16))
                         }.padding(.vertical, 7)
                     })
@@ -65,12 +66,12 @@ struct ProfileView: View {
                 .navigationBarTitle("Profile")
                 .navigationBarTitleDisplayMode(.inline)
 //            .toolbarBackground(.visible, for: .navigationBar)
-//        }
+
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(viewModel:  AuthViewModel())
     }
 }

@@ -10,12 +10,13 @@ import Alamofire
 
 struct ContentView: View {
     
-    @ObservedObject var viewModel = AuthViewModel()
+    
+    @ObservedObject var viewModel : AuthViewModel
        
        
        var body: some View {
            
-               if viewModel.isLoggingIn {
+               if viewModel.isAuthenticated() {
                    HomeView()
                } else {
                    LoginView(viewModel: viewModel)
@@ -28,6 +29,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: AuthViewModel())
     }
 }

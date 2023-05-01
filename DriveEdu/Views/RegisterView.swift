@@ -21,7 +21,13 @@ struct RegisterView: View {
         
         
         VStack {
-            Spacer()
+            
+            Image("img-signup")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .padding()
+                .frame(width: 200, height: 200)
+                .padding(.init(top: 100, leading: 0, bottom: 10, trailing: 0))
             Text(LocalizedStringKey("welcomeMsg"))
                 .font(.title2)
                 .padding()
@@ -89,7 +95,7 @@ struct RegisterView: View {
             .padding(.top, 20)
             
             Spacer()
-            HStack{
+            HStack {
                 Text(LocalizedStringKey("haveAccountMsg"))
                 Button {
                     self.isActive = false // go back to LoginView root
@@ -97,8 +103,9 @@ struct RegisterView: View {
                     Text(LocalizedStringKey("loginBtn"))
                 }
 
-                    
+
                 }
+            
             }.navigationBarBackButtonHidden(true) // hide default back button
             .padding(.bottom, 20)
         }
@@ -110,9 +117,9 @@ struct RegisterView: View {
 
 struct Register_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(viewModel: AuthViewModel())
+        RegisterView(viewModel: AuthViewModel(), isActive: .constant(false))
             .previewDevice("iPhone SE (3rd generation)")
-        LoginView(viewModel: AuthViewModel())
+        RegisterView(viewModel: AuthViewModel(), isActive: .constant(false))
             .previewDevice("iPhone 14 Pro Max")
     }
 }

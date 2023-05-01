@@ -32,19 +32,21 @@ struct Constants {
 
 class AuthViewModel: ObservableObject {
     
-    
     @Published var profiles : [Profile] = []
     @Published var profile = Profile(username: "", firstName: "", lastName: "", city: "", drivingLicense: "", carModel: "")
     @Published var user = User(username: "", password: "")
     @Published var isShowingError: Bool = false
+    @Published var selection: String?
     var errorMessage = ""
     var isLoggingIn = false
-    @Published var selection: String?
+    var profileExist = false
+    
     
     init() {
         // Check if the user has a valid token stored in UserDefaults
-        
-        self.fetchProfiles()
+//        self.existingProfileCheck()
+//        self.fetchProfiles()
+        self.isAuthenticated()
     }
     
     func login() {
@@ -83,14 +85,14 @@ class AuthViewModel: ObservableObject {
                     self.isShowingError = true
                     if let statusCode = response.response?.statusCode, statusCode == 400, let data = response.data {
                         if let errorResponse = try? JSONDecoder().decode(ErrorLogin.self, from: data) {
-                            self.errorMessage = errorResponse.error 
+                            self.errorMessage = errorResponse.error
                         } else {
                             self.errorMessage = "Unknown error"
                         }
                     } else {
                         self.errorMessage = "Failed to decode response: \(error.self)"
                     }
-//                    self.errorMessage = "Failed to decode response: \(error.self)"
+                    
                     self.isLoggingIn = false
                 }
             }
@@ -172,8 +174,30 @@ class AuthViewModel: ObservableObject {
             case .success(let profile):
                 self?.profile = profile
             case .failure(let error):
-                print("Failed to register user: \(error.localizedDescription)")
+                print("Failed to create profile: \(error.localizedDescription)")
             }
         }
     }
+    
+    func existingProfileCheck () {
+        // Perform a GET request to check if the user has a profile
+        let authToken = UserDefaults.standard.string(forKey: "token") ?? ""
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(authToken)"
+        ]
+        AF.request(Constants.profileUrl, headers: headers)
+            .validate()
+            .responseDecodable(of: Profile.self) { [weak self] response in
+                switch response.result {
+                case .success(let profile):
+                    self?.profileExist = true
+                    self?.profile = profile
+                case .failure(let error):
+                    self?.profileExist = false
+                    print("Failed to retrieve profile: \(error.localizedDescription)")
+                }
+            }
+    }
 }
+
+    

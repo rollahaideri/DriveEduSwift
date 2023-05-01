@@ -20,6 +20,11 @@ struct LoginView: View {
 //        NavigationView{
             VStack {
                 Spacer()
+                Image("img-login")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding()
+                    .frame(width: 200, height: 200)
                 Text(LocalizedStringKey("welcomeMsg"))
                     .font(.title2)
                     .padding()

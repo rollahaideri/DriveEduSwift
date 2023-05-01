@@ -16,8 +16,8 @@ struct OnBoardingStep {
 
 private let onBoardingSteps = [
     OnBoardingStep(image: "img-intro1", title: LocalizedStringKey("onBoardingTitle1") , description: LocalizedStringKey("onBoardingDescription1")),
-    OnBoardingStep(image: "img-intro1", title: LocalizedStringKey("onBoardingTitle2") , description: LocalizedStringKey("onBoardingDescription2")),
-    OnBoardingStep(image: "img-intro1", title: LocalizedStringKey("onBoardingTitle3") , description: LocalizedStringKey("onBoardingDescription3"))
+    OnBoardingStep(image: "img-intro2", title: LocalizedStringKey("onBoardingTitle2") , description: LocalizedStringKey("onBoardingDescription2")),
+    OnBoardingStep(image: "img-intro3", title: LocalizedStringKey("onBoardingTitle3") , description: LocalizedStringKey("onBoardingDescription3"))
     
 ]
 

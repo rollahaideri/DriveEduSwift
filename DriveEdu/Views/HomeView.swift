@@ -30,7 +30,7 @@ struct HomeView: View {
                 }.tag(1)
 //                .toolbarBackground(.visible, for: .tabBar)
             
-            ProfileView()
+            ProfileView(viewModel: AuthViewModel())
                 .tabItem {
                     selection == 2 ? Image("ic-profile-fill").renderingMode(.template) :
                     Image("ic-profile").renderingMode(.original)

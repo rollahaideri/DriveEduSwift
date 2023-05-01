@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Profile: Decodable, Encodable {
-    let username: String
+struct Profile: Codable {
+        let username: String
         var firstName: String
         var lastName: String
         var city: String
