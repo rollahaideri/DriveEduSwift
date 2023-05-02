@@ -133,7 +133,15 @@ class AuthViewModel: ObservableObject {
                     
                 case .failure(let error):
                     self.isShowingError = true
-                    self.errorMessage = "Failed to register user: \(error.localizedDescription)"
+                    if let statusCode = response.response?.statusCode, statusCode == 400, let data = response.data {
+                        if let errorResponse = try? JSONDecoder().decode(ErrorLogin.self, from: data) {
+                            self.errorMessage = errorResponse.error
+                        } else {
+                            self.errorMessage = "Unknown error"
+                        }
+                    } else {
+                        self.errorMessage = "Failed to decode response: \(error.self)"
+                    }
                     self.isLoggingIn = false
                 }
             }

@@ -26,20 +26,91 @@ struct DetailView: View {
                         .background(.cyan)
                         .cornerRadius(10)
                         .offset(x: -130, y: 90)
-                        
+                    
                 }
                 .frame(width: UIScreen.main.bounds.width, height: 200)
                 .background(.blue)
                 
                 
                 VStack(alignment: .leading, spacing: 10){
-                    Text("\(firstName + "" + lastName)").font(.title3)
-                    Text(city).font(Font.custom("Poppins-Medium", size: 20)).foregroundColor(Color("Border-Btn"))
-                    Divider()
-                    Text(drivingLicense)
+                    
+                    Text("\(firstName + " " + lastName)").font(.title3)
+                        .padding(.vertical, 5)
+                        .padding(.horizontal, 5)
+                        .background{
+                            RoundedRectangle(cornerRadius: 5, style: .continuous)
+                                .stroke()
+                                .fill(.blue.opacity(0.5))
+                        }
+                    
+                    Text("Driving License:")
+                        .font(.system(size: 12))
+                        .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
+                    
+                    HStack (spacing: 1){
+                        Group {
+                            Image(systemName: "creditcard.fill")
+                                .rotationEffect(.degrees(-50))
+                                .font(.system(size: 20))
+                            Text(drivingLicense)
+                        }
+                        .padding(.horizontal, 7)
+                        .padding(.vertical,10)
+                    }
+                    .background{
+                        RoundedRectangle(cornerRadius: 5, style: .continuous)
+                            .fill(.blue.opacity(0.1))
+                    }
+                    
                     Divider()
                     
-                    Text(carModel).font(.subheadline)
+                    Text("City:")
+                        .font(.system(size: 12))
+                        .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
+                    
+                    HStack (spacing: 1){
+                        Group {
+                            Image(systemName: "location.square.fill")
+                                
+                                .font(.system(size: 20))
+                            Text(city)
+                        }
+                        .padding(.horizontal, 7)
+                        .padding(.vertical,10)
+                    }
+                    .background{
+                        RoundedRectangle(cornerRadius: 5, style: .continuous)
+                            .fill(.blue.opacity(0.1))
+                    }
+                    
+                    Divider()
+                    
+                    Text("Car Model:")
+                        .font(.system(size: 12))
+                        .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
+                    
+                    HStack (spacing: 1){
+                        Group {
+                            Image(systemName: "car")
+                                
+                                .font(.system(size: 20))
+                            Text(carModel)
+                        }
+                        .padding(.horizontal, 7)
+                        .padding(.vertical,10)
+                    }
+                    .background{
+                        RoundedRectangle(cornerRadius: 5, style: .continuous)
+                            .fill(.blue.opacity(0.1))
+                    }
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                 }.padding(EdgeInsets(top: 40, leading: 25, bottom: 10, trailing: 10))
             }

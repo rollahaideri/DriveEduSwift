@@ -17,111 +17,115 @@ struct CardView: View {
     let drivingLicense: String
     let carModel: String
     
+    
+    
     var body: some View {
         NavigationLink (destination: DetailView(firstName: firstName, lastName: lastName, city: city, drivingLicense: drivingLicense, carModel: carModel)){
-            GeometryReader { geo in
-                
-                VStack (alignment: .leading) {
-                    HStack {
-                        Image(systemName: "person.crop.circle.fill")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(height: 70)
-                            .border(.blue, width: 2)
-                        
-                        VStack(alignment: .leading, spacing: 5) {
-                            Text("\(firstName + " " + lastName)")
-                                .fontWeight(.medium)
-                                .font(.system(size: 16))
-                            HStack {
-                                Image(systemName: "location.circle.fill")
-                                    .foregroundColor(.blue)
-                                Text(city)
-                                    .foregroundColor(Color.gray)
-                                    .font(.system(size: 14))
-                            }
-                            
+            VStack (alignment: .leading){
+                HStack(alignment: .top) {
+                    Image("person.profile")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 80, height: 80)
+                        .cornerRadius(10)
+                        .background{
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .stroke(lineWidth: 6)
+                                .fill(.blue)
+                        }
+                        .offset(y: -30)
+                    
+                    VStack(alignment: .leading, spacing: 4){
+                        Text("\(firstName + " " + lastName)")
+                            .font(.system(size: 16))
+                            .fontWeight(.bold)
+                        HStack {
+                            Image("ic-location")
+                            Text(city)
+                                .font(.system(size: 14))
+                                .opacity(0.6)
                         }
                     }
-                    .frame(width: .infinity)
-                    //
-                    
-                    HStack {
-                        HStack {
-                            Image(systemName: "creditcard.fill")
-                                .padding(.leading, 5)
-                                .rotationEffect(.degrees(-50))
-                                .font(.system(size: 20))
-                            
-                            VStack (alignment: .leading, spacing: 4){
-                                Text(LocalizedStringKey("licenseTxt"))
-                                    .fontWeight(.medium)
-                                    .font(.system(size: 13))
-                                
-                                Text(drivingLicense)
-                                    .foregroundColor(Color.gray)
-                                    .font(.system(size: 12))
-                            }
-                        }
-                        .frame(maxWidth: 145)
-                        .padding(5)
-                        .background(Color.white)
-                        .cornerRadius(5)
-                        .overlay(alignment: .leading){
-                            Rectangle()
-                                .foregroundColor(Color.blue)
-                                .frame(width: 7, height: nil )
-                            //TODO: Make the cornerRadius only on topLeading & bottomLeading
-                                .cornerRadius(5)
-                        }
-                        
-                        HStack {
-                            Image(systemName: "car")
-                                .font(.system(size: 20))
-                            
-                            VStack (alignment: .leading, spacing: 4){
-                                Text(LocalizedStringKey("carTxt"))
-                                    .fontWeight(.medium)
-                                    .font(.system(size: 13))
-                                
-                                Text(carModel)
-                                    .foregroundColor(Color.gray)
-                                    .font(.system(size: 12))
-                            }
-                        }
-                        .frame(maxWidth: 110)
-                        .padding(5)
-                        .background(Color.white)
-                        .cornerRadius(5)
-                        .overlay(alignment: .leading){
-                            Rectangle()
-                                .foregroundColor(Color.blue)
-                                .frame(width: 7, height: nil )
-                            //TODO: Make the cornerRadius only on topLeading & bottomLeading
-                                .cornerRadius(5)
-                            
-                        }
-                    }.padding(.trailing, 45)
-                        
                 }
-                .frame(width: geo.size.width , height: geo.size.height)
-                .background(Color.blue.opacity(0.1))
-                .overlay(alignment: .trailing) {
-                    Rectangle()
-                        .foregroundColor(Color.blue)
-                        .frame(width: 40)
-                        .offset(x: 25)
-                    
-                    Text(LocalizedStringKey("supervisorTxt"))
-                        .foregroundColor(.white)
-                        .fontWeight(.bold)
-                        .rotationEffect(.degrees(-90))
-                        .offset(x: 25)
-                }
+                .padding(.horizontal, 10)
+                .frame(alignment: .topLeading)
                 
+                HStack {
+                    HStack (spacing: -2){
+                        Group {
+                            Image(systemName: "creditcard")
+                                .padding(SwiftUI.EdgeInsets(top: 0, leading: 4, bottom: 0, trailing: 0))
+                            
+                            VStack(alignment: .leading){
+                                Text(LocalizedStringKey("licenseTxt"))
+                                    .font(.system(size: 13))
+                                Text(drivingLicense)
+                                    .font(.system(size: 13))
+                                    .foregroundColor(.black.opacity(0.6))
+                            }
+                        }
+                        .padding(.horizontal, 7)
+                        .padding(.vertical, 7)
+                    }
+                    .frame(alignment: .leading)
+                    .background{
+                        RoundedRectangle(cornerRadius: 5)
+                            .fill(.white)
+                            .overlay (alignment: .leading){
+                                RoundedRectangle(cornerRadius: 5, style: .continuous)
+                                    .frame(width: 5)
+                                    .foregroundColor(.blue)
+                            }
+                    }
+                    
+                    HStack (spacing: -2){
+                        Group {
+                            Image(systemName: "car")
+                                .padding(SwiftUI.EdgeInsets(top: 0, leading: 4, bottom: 0, trailing: 0))
+                            
+                            VStack (alignment: .leading){
+                                Text(LocalizedStringKey("carTxt"))
+                                    .font(.system(size: 13))
+                                Text(carModel)
+                                    .font(.system(size: 13))
+                                    .foregroundColor(.black.opacity(0.6))
+                            }
+                        }
+                        .padding(.horizontal, 7)
+                        .padding(.vertical, 7)
+                    }
+                    .background{
+                        RoundedRectangle(cornerRadius: 5)
+                            .fill(.white)
+                            .overlay (alignment: .leading){
+                                RoundedRectangle(cornerRadius: 5, style: .continuous)
+                                    .frame(width: 5)
+                                    .foregroundColor(.blue)
+                            }
+                    }
+                }
+                .padding(.horizontal, 10)
+                .frame(alignment: .topLeading)
             }
-            .frame(width: 350, height: 160)
-        .cornerRadius(5)
+            .frame(width: UIScreen.main.bounds.width * 0.86, alignment: .topLeading)
+            .padding()
+            .background{
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(.blue.opacity(0.11))
+                    .shadow(color: .black.opacity(0.3), radius: 3, x: 4, y: 5)
+                    .overlay (alignment: .trailing){
+                        RoundedRectangle(cornerRadius: 5, style: .continuous)
+                            .frame(width: 40)
+                            .foregroundColor(.blue)
+                    }
+                    .overlay (alignment: .trailing){
+                        Text(LocalizedStringKey("supervisorTxt"))
+                            .foregroundColor(.white)
+                            .fontWeight(.bold)
+                            .rotationEffect(.degrees(-90))
+                            .offset(x: 25)
+                    }
+            }
         }
     }
 }
