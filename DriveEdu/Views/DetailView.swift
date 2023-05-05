@@ -18,7 +18,7 @@ struct DetailView: View {
     var body: some View {
         ScrollView (.vertical){
             VStack(alignment: .leading){
-                ZStack (){
+                ZStack {
                     Image(systemName: "person.fill")
                         .font(.system(size: 50))
                         .foregroundColor(.primary)
@@ -34,14 +34,30 @@ struct DetailView: View {
                 
                 VStack(alignment: .leading, spacing: 10){
                     
-                    Text("\(firstName + " " + lastName)").font(.title3)
-                        .padding(.vertical, 5)
-                        .padding(.horizontal, 5)
-                        .background{
-                            RoundedRectangle(cornerRadius: 5, style: .continuous)
-                                .stroke()
-                                .fill(.blue.opacity(0.5))
+                    HStack {
+                        Text("\(firstName + " " + lastName)").font(.title3)
+                            .padding(.vertical, 5)
+                            .padding(.horizontal, 5)
+                            .background{
+                                RoundedRectangle(cornerRadius: 5, style: .continuous)
+                                    .stroke()
+                                    .fill(.blue.opacity(0.5))
                         }
+                        Spacer()
+                        NavigationLink(destination: ChatConversionView()) {
+                           
+                                Text("Send message")
+                                    .foregroundColor(.white)
+                                    .padding(.horizontal, 7)
+                                    .padding(.vertical, 7)
+                                    .background(.blue)
+                                    .cornerRadius(5)
+                                    
+                           
+
+                        }
+
+                    }
                     
                     Text("Driving License:")
                         .font(.system(size: 12))

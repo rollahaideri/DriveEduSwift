@@ -11,6 +11,10 @@
 		9E432D78299AB2E1003124E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E432D77299AB2E1003124E8 /* Preview Assets.xcassets */; };
 		9E62F5E329D4D95D000BDDB7 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E62F5E229D4D95D000BDDB7 /* Profile.swift */; };
 		9E62F5E529D4DB4A000BDDB7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E62F5E429D4DB4A000BDDB7 /* CardView.swift */; };
+		9E64FB822A0164C900B88B69 /* ChatConversionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E64FB812A0164C900B88B69 /* ChatConversionView.swift */; };
+		9E64FB842A01907F00B88B69 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E64FB832A01907F00B88B69 /* Chat.swift */; };
+		9E64FB872A02735300B88B69 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 9E64FB862A02735300B88B69 /* Starscream */; };
+		9E64FB892A02737800B88B69 /* WebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E64FB882A02737800B88B69 /* WebSocketManager.swift */; };
 		9E70F0CB29EC15AE00FEC727 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E70F0CA29EC15AE00FEC727 /* ProfileView.swift */; };
 		9E70F0CD29EC2ABE00FEC727 /* CompleteProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E70F0CC29EC2ABE00FEC727 /* CompleteProfileView.swift */; };
 		9EBAB8DD29E5512E0027ED8A /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBAB8DC29E5512E0027ED8A /* TestView.swift */; };
@@ -39,6 +43,9 @@
 		9E432D77299AB2E1003124E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9E62F5E229D4D95D000BDDB7 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		9E62F5E429D4DB4A000BDDB7 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		9E64FB812A0164C900B88B69 /* ChatConversionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatConversionView.swift; sourceTree = "<group>"; };
+		9E64FB832A01907F00B88B69 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		9E64FB882A02737800B88B69 /* WebSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketManager.swift; sourceTree = "<group>"; };
 		9E70F0CA29EC15AE00FEC727 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		9E70F0CC29EC2ABE00FEC727 /* CompleteProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteProfileView.swift; sourceTree = "<group>"; };
 		9EBAB8DC29E5512E0027ED8A /* TestView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; wrapsLines = 1; };
@@ -63,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EC341AF29A8C45A00663711 /* Alamofire in Frameworks */,
+				9E64FB872A02735300B88B69 /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +122,7 @@
 			children = (
 				9EC341A929A79FBB00663711 /* Users.swift */,
 				9E62F5E229D4D95D000BDDB7 /* Profile.swift */,
+				9E64FB832A01907F00B88B69 /* Chat.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -122,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				9EC341AB29A79FFA00663711 /* ViewModel.swift */,
+				9E64FB882A02737800B88B69 /* WebSocketManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -141,6 +151,7 @@
 				9E70F0CA29EC15AE00FEC727 /* ProfileView.swift */,
 				9E70F0CC29EC2ABE00FEC727 /* CompleteProfileView.swift */,
 				9EDE303C2A007B5B00CBD676 /* TestStack.swift */,
+				9E64FB812A0164C900B88B69 /* ChatConversionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,6 +190,7 @@
 			name = DriveEdu;
 			packageProductDependencies = (
 				9EC341AE29A8C45A00663711 /* Alamofire */,
+				9E64FB862A02735300B88B69 /* Starscream */,
 			);
 			productName = DriveEdu;
 			productReference = 9E432D6D299AB2DF003124E8 /* DriveEdu.app */;
@@ -211,6 +223,7 @@
 			mainGroup = 9E432D64299AB2DF003124E8;
 			packageReferences = (
 				9EC341AD29A8C45A00663711 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				9E64FB852A02735300B88B69 /* XCRemoteSwiftPackageReference "Starscream" */,
 			);
 			productRefGroup = 9E432D6E299AB2DF003124E8 /* Products */;
 			projectDirPath = "";
@@ -242,6 +255,7 @@
 			files = (
 				9EC341BB29AA501C00663711 /* ViewModel.swift in Sources */,
 				9EBAB8DF29E82B6E0027ED8A /* FirstView.swift in Sources */,
+				9E64FB842A01907F00B88B69 /* Chat.swift in Sources */,
 				9E62F5E329D4D95D000BDDB7 /* Profile.swift in Sources */,
 				9EDE303D2A007B5B00CBD676 /* TestStack.swift in Sources */,
 				9EBAB8DD29E5512E0027ED8A /* TestView.swift in Sources */,
@@ -250,8 +264,10 @@
 				9E62F5E529D4DB4A000BDDB7 /* CardView.swift in Sources */,
 				9EBAB8E129E99FEF0027ED8A /* DetailView.swift in Sources */,
 				9EC341BD29AA501C00663711 /* ContentView.swift in Sources */,
+				9E64FB892A02737800B88B69 /* WebSocketManager.swift in Sources */,
 				9EC341BE29AA501C00663711 /* LoginView.swift in Sources */,
 				9E70F0CD29EC2ABE00FEC727 /* CompleteProfileView.swift in Sources */,
+				9E64FB822A0164C900B88B69 /* ChatConversionView.swift in Sources */,
 				9EC341CC29AE402D00663711 /* RegisterView.swift in Sources */,
 				9EC341BF29AA501C00663711 /* OnboardingView.swift in Sources */,
 				9E70F0CB29EC15AE00FEC727 /* ProfileView.swift in Sources */,
@@ -473,6 +489,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9E64FB852A02735300B88B69 /* XCRemoteSwiftPackageReference "Starscream" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daltoniam/Starscream.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		9EC341AD29A8C45A00663711 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -484,6 +508,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9E64FB862A02735300B88B69 /* Starscream */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E64FB852A02735300B88B69 /* XCRemoteSwiftPackageReference "Starscream" */;
+			productName = Starscream;
+		};
 		9EC341AE29A8C45A00663711 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9EC341AD29A8C45A00663711 /* XCRemoteSwiftPackageReference "Alamofire" */;

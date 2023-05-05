@@ -23,7 +23,10 @@ struct FirstView: View {
                 $0.carModel.localizedStandardContains(searchText)
             }
                 .reversed(), id: \.username) { profile in
-                    CardView(firstName: profile.firstName, lastName: profile.lastName, city: profile.city, drivingLicense: profile.drivingLicense, carModel: profile.carModel)
+                    
+                        CardView(firstName: profile.firstName, lastName: profile.lastName, city: profile.city, drivingLicense: profile.drivingLicense, carModel: profile.carModel)
+                        
+                            .padding()
                 }
                 
                 .listStyle(.plain)
