@@ -24,7 +24,7 @@ struct FirstView: View {
             }
                 .reversed(), id: \.username) { profile in
                     
-                        CardView(firstName: profile.firstName, lastName: profile.lastName, city: profile.city, drivingLicense: profile.drivingLicense, carModel: profile.carModel)
+                    CardView(username: profile.username, firstName: profile.firstName, lastName: profile.lastName, city: profile.city, drivingLicense: profile.drivingLicense, carModel: profile.carModel)
                         
                             .padding()
                 }

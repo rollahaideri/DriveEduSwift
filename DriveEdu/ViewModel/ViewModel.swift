@@ -99,6 +99,11 @@ class AuthViewModel: ObservableObject {
     }
     // login end
     
+    func logout() {
+        // Remove user's token from UserDefaults
+        UserDefaults.standard.removeObject(forKey: "token")
+    }
+    
     func register() {
         guard !user.username.isEmpty else {
             isShowingError = true

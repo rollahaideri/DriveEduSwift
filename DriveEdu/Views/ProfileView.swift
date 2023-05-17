@@ -31,7 +31,8 @@ struct ProfileView: View {
                             
                     })
                     Button {
-                        print("User logout")
+                        print("Logout button tapped!")
+                        viewModel.logout()
                         
                     } label: {
                         HStack (spacing: 13){

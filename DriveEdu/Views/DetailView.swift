@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct DetailView: View {
-    
+    let username: String
     let firstName: String
     let lastName: String
     let city: String
     let drivingLicense: String
     let carModel: String
+    
+    
     
     var body: some View {
         ScrollView (.vertical){
@@ -138,6 +140,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(firstName: "John", lastName: "Doe", city: "Stockholm", drivingLicense: "B-manuel", carModel: "Volvo")
+        DetailView(username: "", firstName: "John", lastName: "Doe", city: "Stockholm", drivingLicense: "B-manuel", carModel: "Volvo")
     }
 }

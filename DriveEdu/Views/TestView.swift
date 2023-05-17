@@ -11,7 +11,7 @@ import SwiftUI
 
 
 struct TestView: View {
-    
+    let username: String
     let firstName: String
     let lastName: String
     let city: String
@@ -19,7 +19,7 @@ struct TestView: View {
     let carModel: String
     
     var body: some View {
-        NavigationLink (destination: DetailView(firstName: firstName, lastName: lastName, city: city, drivingLicense: drivingLicense, carModel: carModel)){
+        NavigationLink (destination: DetailView(username: username,firstName: firstName, lastName: lastName, city: city, drivingLicense: drivingLicense, carModel: carModel)){
             VStack (alignment: .leading){
                 HStack(alignment: .top) {
                     Image("person.profile")
@@ -131,7 +131,7 @@ struct TestView: View {
 
 struct TestView_Previews: PreviewProvider {
     static var previews: some View {
-        TestView(firstName: "", lastName: "", city: "", drivingLicense: "", carModel: "")
+        TestView(username: "", firstName: "", lastName: "", city: "", drivingLicense: "", carModel: "")
             .previewLayout(.sizeThatFits)
         
     }
