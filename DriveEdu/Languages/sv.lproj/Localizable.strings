@@ -41,9 +41,23 @@
 "supervisorTxt" = "Handledare";
 "manuelTxt" = "Manuel";
 "automateTxt" = "Automatad";
+"cityTxt" = "Stad";
+"carModelTxt" = "Bil Model";
 
 // Searchable String
 "searchTxt" = "Sök";
+
+// Tab bar Stings
+"homeTxt" = "Hem";
+"messagesTxt" = "Meddelande";
+"profileTxt" = "Profil";
+
+// Profile View String
+"accountTxt" = "Konto";
+"completeProfileTxt" = "Komplettera din profil";
+"updateProfileTxt" = "Uppdatera din profil";
+"manageAccountTxt" = "Hantera konto";
+"logoutTxt" = "Logga ut";
 
 
 

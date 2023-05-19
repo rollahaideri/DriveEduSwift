@@ -17,7 +17,7 @@ struct HomeView: View {
                     selection == 0 ? Image("ic-house-window-fill").renderingMode(.template) :
                     Image("ic-house-window")
                         .renderingMode(.original)
-                    Text("Home")
+                    Text(LocalizedStringKey("homeTxt"))
                 }.tag(0)
                 
 //                .toolbarBackground(.visible, for: .tabBar)
@@ -26,7 +26,7 @@ struct HomeView: View {
                 .tabItem {
                     selection == 1 ? Image("ic-message-fill").renderingMode(.template) :
                     Image("ic-message").renderingMode(.original)
-                    Text("Messages")
+                    Text(LocalizedStringKey("messagesTxt"))
                 }.tag(1)
 //                .toolbarBackground(.visible, for: .tabBar)
             
@@ -34,7 +34,7 @@ struct HomeView: View {
                 .tabItem {
                     selection == 2 ? Image("ic-profile-fill").renderingMode(.template) :
                     Image("ic-profile").renderingMode(.original)
-                    Text("Profile")
+                    Text(LocalizedStringKey("profileTxt"))
                 }.tag(2)
 //                .toolbarBackground(.visible, for: .tabBar)
             

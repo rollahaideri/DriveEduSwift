@@ -37,8 +37,22 @@
 "supervisorTxt" = "Supervisor";
 "manuelTxt" = "Manuel";
 "automateTxt" = "Automated";
+"cityTxt" = "City";
+"carModelTxt" = "Car Model";
 
 // Searchable String
 "searchTxt" = "Search";
+
+// Tab bar Stings
+"homeTxt" = "Home";
+"messagesTxt" = "Messages";
+"profileTxt" = "Profile";
+
+// Profile View String
+"accountTxt" = "Account";
+"completeProfileTxt" = "Complete your profile";
+"updateProfileTxt" = "Update your profile";
+"manageAccountTxt" = "Manage account";
+"logoutTxt" = "Logout";
 
 

@@ -43,7 +43,7 @@ struct DetailView: View {
                                 .fill(.blue.opacity(0.5))
                         }
                     
-                    Text("Driving License:")
+                    Text(LocalizedStringKey("licenseTxt"))
                         .font(.system(size: 12))
                         .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
                     
@@ -64,7 +64,7 @@ struct DetailView: View {
                     
                     Divider()
                     
-                    Text("City:")
+                    Text(LocalizedStringKey("cityTxt"))
                         .font(.system(size: 12))
                         .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
                     
@@ -85,7 +85,7 @@ struct DetailView: View {
                     
                     Divider()
                     
-                    Text("Car Model:")
+                    Text(LocalizedStringKey("carModelTxt"))
                         .font(.system(size: 12))
                         .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
                     

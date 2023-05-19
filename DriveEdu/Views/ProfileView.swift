@@ -18,14 +18,14 @@ struct ProfileView: View {
                         HStack (spacing: 13){
                             Image("ic-profile-edit")
                             
-                            Text(viewModel.profileExist ? "Complete your profile" : "Update your profile")
+                            Text(viewModel.profileExist ? LocalizedStringKey("completeProfileTxt") : LocalizedStringKey("updateProfileTxt"))
                                 .font(.system(size: 16))
                         }.padding(.vertical, 7)
                     })
                     NavigationLink(destination: Text("HEllo"), label: {
                         HStack (spacing: 13){
                             Image("ic-user-gear")
-                            Text("Manage account")
+                            Text(LocalizedStringKey("manageAccountTxt"))
                                 .font(.system(size: 16))
                         }.padding(.vertical, 7)
                             
@@ -36,14 +36,14 @@ struct ProfileView: View {
                     } label: {
                         HStack (spacing: 13){
                             Image("ic-exit")
-                            Text("Logout")
+                            Text(LocalizedStringKey("logoutTxt"))
                                 .font(.system(size: 16))
                                 .foregroundColor(.primary)
                         }.padding(.vertical, 7)
                     }
 
                 } header: {
-                    Text("Account")
+                    Text(LocalizedStringKey("accountTxt"))
                         .font(.title2)
                         .fontWeight(.bold)
                         .textCase(.none)
