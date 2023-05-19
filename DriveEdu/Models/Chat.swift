@@ -7,10 +7,14 @@
 
 import Foundation
 
-struct Chat: Identifiable {
-    let id: UUID = UUID()
+struct Chat: Codable , Identifiable {
+    
+    let fromUsername: String
+    let username: String
+    let id: String
+    let date: String
     let message: String
-    let sender: User
-    let receiver: User
+    
+    
     
 }

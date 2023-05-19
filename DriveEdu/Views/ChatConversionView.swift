@@ -16,7 +16,7 @@ struct ChatConversionView: View {
 
     @StateObject private var model = ChatScreenModel()
     @State private var message = ""
-    let recipientUsername = "testusers"
+    let recipientUsername = "testuser"
 
     // MARK: - Events
     private func onAppear() {

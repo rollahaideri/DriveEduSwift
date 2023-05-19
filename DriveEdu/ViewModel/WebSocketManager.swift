@@ -22,9 +22,14 @@ final class ChatScreenModel: ObservableObject {
     // MARK: - Connection
     func connect() { // 2
         let url = URL(string: "ws://192.168.1.136:8080")! // 3
-        webSocketTask = URLSession.shared.webSocketTask(with: url) // 4
+        var request = URLRequest(url: url)
+        let authToken = UserDefaults.standard.string(forKey: "token") ?? ""
+        request.addValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
+        webSocketTask = URLSession.shared.webSocketTask(with: request) // 4
         webSocketTask?.receive(completionHandler: onReceive) // 5
         webSocketTask?.resume() // 6
+        
+        print("\(authToken)")
     }
     
     func disconnect() { // 7

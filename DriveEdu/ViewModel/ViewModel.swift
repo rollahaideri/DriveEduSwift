@@ -27,12 +27,14 @@ struct Constants {
     static let loginUrl = "\(baseUrl)/user/login"
     static let registerUrl = "\(baseUrl)/user/signup"
     static let profileUrl = "\(baseUrl)/profile"
+    static let chatUrl = "\(baseUrl)/chat"
     static let contentType = "application/json"
 }
 
 class AuthViewModel: ObservableObject {
     
     @Published var profiles : [Profile] = []
+    @Published var chats : [Chat] = []
     @Published var profile = Profile(username: "", firstName: "", lastName: "", city: "", drivingLicense: "", carModel: "")
     @Published var user = User(username: "", password: "")
     @Published var isShowingError: Bool = false
@@ -102,6 +104,7 @@ class AuthViewModel: ObservableObject {
     func logout() {
         // Remove user's token from UserDefaults
         UserDefaults.standard.removeObject(forKey: "token")
+        
     }
     
     func register() {
@@ -163,6 +166,30 @@ class AuthViewModel: ObservableObject {
                 switch response.result {
                 case .success(let profiles):
                     self?.profiles = profiles
+                case .failure(let error):
+                    print("Failed to fetch profiles: \(error.localizedDescription)")
+                }
+            }
+    }
+    
+    func fetchChats() {
+        let authToken = UserDefaults.standard.string(forKey: "token") ?? ""
+        let headers: HTTPHeaders = [
+            "Content-Type": Constants.contentType,
+            "Authorization":  "Bearer \(authToken)"
+        ]
+        AF.request(Constants.chatUrl,
+                   method: .get,
+                   headers: headers)
+        
+            .validate() // Validation to automatically check for HTTP errors
+            .responseDecodable(of: [Chat].self) { [weak self] response in // Capture list to avoid memory leaks
+                print("Raw response data: \(response)")
+                switch response.result {
+                case .success(let chat):
+                    print("Fetched chats: \(chat)")
+                    self?.chats = chat
+                    
                 case .failure(let error):
                     print("Failed to fetch profiles: \(error.localizedDescription)")
                 }

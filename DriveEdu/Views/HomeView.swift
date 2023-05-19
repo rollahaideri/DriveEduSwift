@@ -22,7 +22,7 @@ struct HomeView: View {
                 
 //                .toolbarBackground(.visible, for: .tabBar)
             
-            Text("Work in progress...")
+            ChatView(viewModel: AuthViewModel())
                 .tabItem {
                     selection == 1 ? Image("ic-message-fill").renderingMode(.template) :
                     Image("ic-message").renderingMode(.original)
