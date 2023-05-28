@@ -23,7 +23,7 @@ struct RegisterResponse: Codable {
 
 
 struct Constants {
-    static let baseUrl = "http://192.168.1.136:4000"
+    static let baseUrl = "http://172.16.240.50:4000"
     static let loginUrl = "\(baseUrl)/user/login"
     static let registerUrl = "\(baseUrl)/user/signup"
     static let profileUrl = "\(baseUrl)/profile"
@@ -37,17 +37,19 @@ class AuthViewModel: ObservableObject {
     @Published var user = User(username: "", password: "")
     @Published var isShowingError: Bool = false
     @Published var selection: String?
+    
     var errorMessage = ""
-    var isLoggingIn = false
+    @Published var isLoggingIn = false
     var profileExist = false
     
     
-    init() {
-        // Check if the user has a valid token stored in UserDefaults
-//        self.existingProfileCheck()
-//        self.fetchProfiles()
-        self.isAuthenticated()
-    }
+    
+//    init() {
+//        // Check if the user has a valid token stored in UserDefaults
+////        self.existingProfileCheck()
+////        self.fetchProfiles()
+//        self.isAuthenticated()
+//    }
     
     func login() {
         
@@ -99,6 +101,12 @@ class AuthViewModel: ObservableObject {
     }
     // login end
     
+    func logout() {
+            UserDefaults.standard.removeObject(forKey: "token")
+        self.isLoggingIn = false
+        
+    }
+    
     func register() {
         guard !user.username.isEmpty else {
             isShowingError = true
@@ -149,6 +157,7 @@ class AuthViewModel: ObservableObject {
     
     func isAuthenticated() -> Bool {
         return UserDefaults.standard.string(forKey: "token") != nil
+        
     }
     
     func fetchProfiles() {

@@ -12,61 +12,69 @@ struct ProfileView: View {
     
     var body: some View {
         
+        VStack {
             List{
-                Section {
-                    NavigationLink(destination: CompleteProfileView(viewModel: AuthViewModel()), label: {
-                        HStack (spacing: 13){
-                            Image("ic-profile-edit")
-                            
-                            Text(viewModel.profileExist ? LocalizedStringKey("completeProfileTxt") : LocalizedStringKey("updateProfileTxt"))
-                                .font(.system(size: 16))
-                        }.padding(.vertical, 7)
-                    })
-                    NavigationLink(destination: Text("HEllo"), label: {
-                        HStack (spacing: 13){
-                            Image("ic-user-gear")
-                            Text(LocalizedStringKey("manageAccountTxt"))
-                                .font(.system(size: 16))
-                        }.padding(.vertical, 7)
-                            
-                    })
-                    Button {
-                        print("User logout")
+                    Section {
+                        NavigationLink(destination: CompleteProfileView(viewModel: AuthViewModel()), label: {
+                            HStack (spacing: 13){
+                                Image("ic-profile-edit")
+                                
+                                Text( LocalizedStringKey("completeProfileTxt"))
+                                    .font(.system(size: 16))
+                            }.padding(.vertical, 7)
+                        })
+//                        NavigationLink(destination: Text("HEllo"), label: {
+//                            HStack (spacing: 13){
+//                                Image("ic-user-gear")
+//                                Text(LocalizedStringKey("manageAccountTxt"))
+//                                    .font(.system(size: 16))
+//                            }.padding(.vertical, 7)
+//
+//                        })
                         
-                    } label: {
-                        HStack (spacing: 13){
-                            Image("ic-exit")
-                            Text(LocalizedStringKey("logoutTxt"))
-                                .font(.system(size: 16))
-                                .foregroundColor(.primary)
-                        }.padding(.vertical, 7)
+
+                    } header: {
+                        Text(LocalizedStringKey("accountTxt"))
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .textCase(.none)
+                            
                     }
-
-                } header: {
-                    Text(LocalizedStringKey("accountTxt"))
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .textCase(.none)
-                        
-                }
-                Section {
+                
+                Button {
+                    viewModel.logout()
                     
-                } header: {
-                    Text("Settings")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .textCase(.none)
-                        
+                    
+                    
+                } label: {
+                    HStack (spacing: 13){
+                        Image("ic-exit")
+                        Text(LocalizedStringKey("logoutTxt"))
+                            .font(.system(size: 16))
+                            .foregroundColor(.primary)
+                    }.padding(.vertical, 7)
                 }
-                
-                
-            }
-                .listStyle(.grouped)
-//                .scrollContentBackground(.hidden)
-                .navigationBarTitle("Profile")
+    //                Section {
+    //
+    //                } header: {
+    //                    Text("Settings")
+    //                        .font(.title2)
+    //                        .fontWeight(.bold)
+    //                        .textCase(.none)
+    //
+    //                }
+                  
+                    
+                }
+                    .listStyle(.grouped)
+    //                .scrollContentBackground(.hidden)
+                    .navigationBarTitle("Profile")
                 .navigationBarTitleDisplayMode(.inline)
+            
+           
+        }
 //            .toolbarBackground(.visible, for: .navigationBar)
-
+      
     }
 }
 

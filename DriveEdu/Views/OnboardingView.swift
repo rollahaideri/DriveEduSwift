@@ -23,6 +23,7 @@ private let onBoardingSteps = [
 
 struct OnboardingView: View {
     @State private var currentStep = 0
+    @ObservedObject var viewModel : AuthViewModel
     
     var body: some View {
         
@@ -80,7 +81,7 @@ struct OnboardingView: View {
                 //            Spacer()
                 
                 HStack {
-                    NavigationLink(destination: LoginView(viewModel: AuthViewModel())) {
+                    NavigationLink(destination: LoginView(viewModel: viewModel)) {
                         Text(LocalizedStringKey("loginBtn"))
                             .foregroundColor(.white)
                             .bold()
@@ -91,7 +92,7 @@ struct OnboardingView: View {
                             .padding(.horizontal)
                     }
                     
-                    NavigationLink(destination: HomeView()) {
+                    NavigationLink(destination: HomeView(viewModel: viewModel)) {
                         Text(LocalizedStringKey("exploreBtn"))
                             .foregroundColor(.black)
                             .bold()
@@ -112,6 +113,6 @@ struct OnboardingView: View {
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView()
+        OnboardingView(viewModel: AuthViewModel())
     }
 }

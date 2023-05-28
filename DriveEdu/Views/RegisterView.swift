@@ -60,7 +60,7 @@ struct RegisterView: View {
             
             if viewModel.isLoggingIn {
                 NavigationLink(
-                    destination: HomeView(),
+                    destination: HomeView(viewModel: viewModel),
                     isActive: $isActive,
                     label: {
                         EmptyView()

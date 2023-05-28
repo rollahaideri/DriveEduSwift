@@ -15,7 +15,7 @@ struct DriveEduApp: App {
             NavigationView {
             if isFirstLaunch {
                 // Show the onboarding view for the first launch
-                OnboardingView()
+                OnboardingView(viewModel: AuthViewModel())
                     .onDisappear {
                         // Update the flag when the onboarding view disappears
                         isFirstLaunch = false

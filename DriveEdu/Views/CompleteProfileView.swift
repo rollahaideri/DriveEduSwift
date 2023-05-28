@@ -65,6 +65,8 @@ struct CompleteProfileView: View {
                 }
             }
             
+            Spacer()
+            
             Button {
                 viewModel.profile.drivingLicense = pickerOptions[selectedOption]
                 viewModel.completeProfile()
@@ -81,6 +83,7 @@ struct CompleteProfileView: View {
             Spacer()
             
         }
+        
     }
 }
 
