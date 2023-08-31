@@ -23,7 +23,7 @@ struct RegisterResponse: Codable {
 
 
 struct Constants {
-    static let baseUrl = "http://172.16.240.50:4000"
+    static let baseUrl = "http://192.168.1.136:4000"
     static let loginUrl = "\(baseUrl)/user/login"
     static let registerUrl = "\(baseUrl)/user/signup"
     static let profileUrl = "\(baseUrl)/profile"

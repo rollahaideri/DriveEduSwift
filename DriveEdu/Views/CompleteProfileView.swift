@@ -13,9 +13,9 @@ struct CompleteProfileView: View {
     @State private var selectedOption = 0
     private let pickerOptions = ["Manual", "Automatic"]
     var body: some View {
-        VStack {
         
-                Text("Profile")
+        
+                
 
             Form {
                 Section {
@@ -55,6 +55,8 @@ struct CompleteProfileView: View {
                     Text("Driving license type *")
                         .textCase(.none)
                 }
+                .listRowBackground(Color.clear)
+            
                 
                 Section {
                     TextField("Car Model", text: $viewModel.profile.carModel)
@@ -63,26 +65,31 @@ struct CompleteProfileView: View {
                     Text("Car Model (optional)")
                         .textCase(.none)
                 }
+                
+                
+                
+                Button {
+                    viewModel.profile.drivingLicense = pickerOptions[selectedOption]
+                    viewModel.completeProfile()
+                } label: {
+                    ZStack {
+                        Text("Save & Publish")
+                            .padding(.horizontal,70)
+                            .padding(.vertical, 15)
+                        .foregroundColor(.white)
+                        
+                    } .background(Color.blue)
+                        .cornerRadius(10)
+                        
+                }
+                .listRowBackground(Color.clear)
+                .padding()
+                
             }
             
-            Spacer()
+           
             
-            Button {
-                viewModel.profile.drivingLicense = pickerOptions[selectedOption]
-                viewModel.completeProfile()
-            } label: {
-                ZStack {
-                    Text("Save & Publish")
-                        .padding(.horizontal,70)
-                        .padding(.vertical, 15)
-                    .foregroundColor(.primary)
-                } .background(Color.blue)
-                    .cornerRadius(10)
-                    
-            }.padding()
-            Spacer()
-            
-        }
+        
         
     }
 }
